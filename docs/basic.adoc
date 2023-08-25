@@ -8,3 +8,9 @@ pip install virtualenv
 # Create Virtual Environment
 python -m venv venv
 ```
+
+== Install Package as Editable mode
+```bash
+# Go to the package and run below command
+pip install -e .
+```
