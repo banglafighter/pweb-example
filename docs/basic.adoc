@@ -1,0 +1,10 @@
+
+
+== Create Virtual Environment
+```bash
+# If needed then install the virtual env pakcage
+pip install virtualenv
+
+# Create Virtual Environment
+python -m venv venv
+```
