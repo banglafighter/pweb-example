@@ -7,6 +7,6 @@ for name in $( ls $dependencies ); do
   path="$dependencies/$name"
   cd "$path"
   git pull
-  pip install -e .
+  python setup.py develop
   cd ..
 done
