@@ -9,7 +9,7 @@ env = os.environ.get('source')
 
 
 def get_dependencies():
-    dependency = ["pweb"]
+    dependency = []
 
     if env and env == "dev":
         return dependency
@@ -18,13 +18,13 @@ def get_dependencies():
 
 
 setup(
-    name='pweb-example',
+    name='pwebe-basic',
     version='1.0.0',
     url='https://github.com/problemfighter/pweb-example',
     license='Apache 2.0',
     author='Problem Fighter',
     author_email='problemfighter.com@gmail.com',
-    description='PWeb Example Project',
+    description='Basic Example',
     long_description=README,
     long_description_content_type='text/markdown',
     packages=find_packages(),
