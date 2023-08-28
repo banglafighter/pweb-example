@@ -1,4 +1,6 @@
+from pweb import PWebAppConfig
 
 
-class Config:
+class Config(PWebAppConfig):
     pass
+
