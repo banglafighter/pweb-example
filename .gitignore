@@ -15,5 +15,6 @@ build/
 
 .idea
 *.sqlite
+*.sqlite3
 
 /dependencies
