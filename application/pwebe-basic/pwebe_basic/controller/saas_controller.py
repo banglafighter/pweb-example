@@ -28,6 +28,14 @@ def init_tenant():
     return response
 
 
+@saas_controller.route('/remove-tenant')
+def remove_tenant():
+    tkey = request.args.get("tkey")
+    if tkey and pweb_orm.remove_tenant(tkey):
+        return "Tenant Removed"
+    return "Unable to remove tenant"
+
+
 @saas_controller.route('/insert')
 def insert():
     tkey = request.args.get("tkey", default="default")
