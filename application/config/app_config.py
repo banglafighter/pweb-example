@@ -2,5 +2,5 @@ from pweb import PWebAppConfig
 
 
 class Config(PWebAppConfig):
-    pass
+    SWAGGER_TITLE: str = "Swagger Example App"
 

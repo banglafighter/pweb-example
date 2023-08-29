@@ -35,7 +35,7 @@ def delete(id: int):
 
 
 @rest_api_controller.route("/upload", methods=['POST'])
-@pweb_upload_endpoint(response_obj=PersonUploadDTO)
+@pweb_upload_endpoint(request_obj=PersonUploadDTO, pweb_message_response=True)
 def upload():
     return ""
 
