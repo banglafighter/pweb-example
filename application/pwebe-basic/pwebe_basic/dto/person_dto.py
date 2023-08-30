@@ -1,8 +1,9 @@
 from pweb import fields, APIBase, FileField
+from pweb_form_rest.schema.pweb_rest_schema import PWebRestDTO
 from pwebe_basic.model.Person import Person
 
 
-class PersonDetailsDTO(APIBase):
+class PersonDetailsDTO(PWebRestDTO):
     first_name = fields.String(required=True, error_messages={"required": "Please enter first name"})
     last_name = fields.String(allow_none=True)
     email = fields.Email(required=True, error_messages={"required": "Please enter email."})
