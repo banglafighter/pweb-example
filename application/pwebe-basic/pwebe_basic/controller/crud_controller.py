@@ -11,7 +11,7 @@ crud_controller = Blueprint(
 
 @crud_controller.route('/create')
 def create():
-    person = Person(first_name="First Name", last_name="Last Name", email="hmtmcse.com@gmail.com", age=22, income=500)
+    person = Person(firstname="First Name", lastname="Last Name", email="hmtmcse.com@gmail.com", age=22, income=500)
     person.save()
     response = "Data successfully Inserted"
     return response
@@ -21,8 +21,8 @@ def create():
 def update():
     person = Person.query.filter_by(id=1).first()
     if person:
-        person.first_name = "FName Update"
-        person.last_name = "LName Update"
+        person.firstname = "FName Update"
+        person.lastname = "LName Update"
         person.save()
     return "Data has been updated."
 
@@ -40,5 +40,5 @@ def list():
     response = ""
     persons = Person.query.all()
     for person in persons:
-        response += person.first_name + " " + person.last_name + " " + person.email + "<br>"
+        response += person.firstname + " " + person.lastname + " " + person.email + "<br>"
     return response

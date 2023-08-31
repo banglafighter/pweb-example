@@ -1,11 +1,11 @@
-from pweb import fields, APIBase, FileField
+from pweb import fields, FileField
 from pweb_form_rest.schema.pweb_rest_schema import PWebRestDTO
 from pwebe_basic.model.Person import Person
 
 
 class PersonDetailsDTO(PWebRestDTO):
-    first_name = fields.String(required=True, error_messages={"required": "Please enter first name"})
-    last_name = fields.String(allow_none=True)
+    firstname = fields.String(required=True, error_messages={"required": "Please enter first name"})
+    lastname = fields.String(allow_none=True)
     email = fields.Email(required=True, error_messages={"required": "Please enter email."})
     income = fields.Float(allow_none=True)
 
@@ -24,7 +24,7 @@ class PersonUpdateDTO(PersonDetailsDTO):
     id = fields.Integer(required=True, error_messages={"required": "Please enter id"})
 
 
-class PersonUploadDTO(APIBase):
+class PersonUploadDTO(PWebRestDTO):
     image = FileField(allow_none=True)
     id = fields.Integer(required=True, error_messages={"required": "Please enter id"})
 
