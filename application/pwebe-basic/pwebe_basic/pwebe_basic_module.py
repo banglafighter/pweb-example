@@ -6,7 +6,7 @@ from pwebe_basic.controller.rest_api_controller import rest_api_controller
 from pwebe_basic.controller.saas_controller import saas_controller
 
 
-class PWebBasicRegistry(PWebComponentRegister):
+class PWebBasicModule(PWebComponentRegister):
 
     def run_on_start(self, pweb_app):
         pass

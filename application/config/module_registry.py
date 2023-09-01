@@ -1,10 +1,12 @@
 from pweb import PWebModuleRegister
-from pwebe_basic.pwebe_basic_registry import PWebBasicRegistry
+from pweb_ssr.pweb_ssr_module import PWebSSRModule
+from pwebe_basic.pwebe_basic_module import PWebBasicModule
 
 
 class Register(PWebModuleRegister):
 
     def get_module_list(self) -> list:
         return [
-            PWebBasicRegistry
+            PWebBasicModule,
+            PWebSSRModule
         ]
