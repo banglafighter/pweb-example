@@ -53,7 +53,7 @@ class UploadCustomNameFileDTO(PWebRestDTO):
 
 
 class UploadPrefixNameFileDTO(PWebRestDTO):
-    customNameFile = FileField(required=True, error_messages={"required": "Please enter any kind of file"}).set_save_prefix("prefix")
+    anyFile = FileField(required=True, error_messages={"required": "Please enter any kind of file"}).set_save_prefix("prefix")
 
     class Meta:
         model = FileHolder
@@ -61,7 +61,7 @@ class UploadPrefixNameFileDTO(PWebRestDTO):
 
 
 class UploadSizedFileDTO(PWebRestDTO):
-    customNameFile = FileField(required=True, error_messages={"required": "Please enter any kind of file"}).set_max_size_kb(100)
+    anyFile = FileField(required=True, error_messages={"required": "Please enter file less than 100KB"}).set_max_size_kb(100)
 
     class Meta:
         model = FileHolder
@@ -69,7 +69,7 @@ class UploadSizedFileDTO(PWebRestDTO):
 
 
 class DataAndUploadFileDTO(PWebRestDTO):
-    customNameFile = FileField(required=True, error_messages={"required": "Please enter any kind of file"})
+    anyFile = FileField(required=True, error_messages={"required": "Please enter any kind of file"})
     alterText = fields.String(required=True, error_messages={"required": "Please enter alter text"})
     title = fields.String(allow_none=True)
 

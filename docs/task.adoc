@@ -1,0 +1,2 @@
+* Handle Global Exception
+** Table Not available
