@@ -1,4 +1,5 @@
 from pweb import Blueprint
+from pweb_form_rest import ssr_ui_render
 from pwebe_basic.service.form_service import FormService
 
 url_prefix = "/form"
@@ -29,3 +30,8 @@ def delete(id: int):
 @form_controller.route("/list", methods=['GET'])
 def list():
     return form_service.list()
+
+
+@form_controller.route("/custom-helper", methods=['GET'])
+def custom_helper():
+    return ssr_ui_render(view_name="form/custom-helper")
