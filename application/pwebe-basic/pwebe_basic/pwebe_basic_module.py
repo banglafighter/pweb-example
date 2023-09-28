@@ -5,6 +5,7 @@ from pwebe_basic.controller.file_holder_controller import file_holder_controller
 from pwebe_basic.controller.form_controller import form_controller
 from pwebe_basic.controller.rest_api_controller import rest_api_controller
 from pwebe_basic.controller.saas_controller import saas_controller
+from pwebe_basic.controller.ssr_controller import ssr_controller
 
 
 class PWebBasicModule(PWebComponentRegister):
@@ -25,3 +26,4 @@ class PWebBasicModule(PWebComponentRegister):
         pweb_app.register_blueprint(rest_api_controller)
         pweb_app.register_blueprint(file_holder_controller)
         pweb_app.register_blueprint(form_controller)
+        pweb_app.register_blueprint(ssr_controller)
