@@ -1,5 +1,5 @@
 from pweb import Blueprint
-from pweb_form_rest import ssr_ui_render
+from pwebe_basic.service.ssr_service import SSRService
 
 url_prefix = "/ssr"
 ssr_controller = Blueprint(
@@ -8,7 +8,9 @@ ssr_controller = Blueprint(
     url_prefix=url_prefix
 )
 
+ssr_service = SSRService()
+
 
 @ssr_controller.route("/", methods=['GET'])
 def index():
-    return ssr_ui_render(view_name="ssr/index")
+    return ssr_service.index()
