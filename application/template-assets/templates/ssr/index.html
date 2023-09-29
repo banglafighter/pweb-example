@@ -1,32 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SSR Example</title>
-</head>
-<body>
+{% extends "layout/base.html" %}
 
-{% form_input field=form.firstname %}
+{% block title %}SSR Example{% endblock %}
 
-<code>
-    {% input_error %}
-</code>
+{% block content %}
+    {% form_input field=form.firstname %}
 
-<code>
-    {% error_class %}
-</code>
+    <code>
+        {% input_error %}
+    </code>
 
-<code>
-    {% make_checked %}
-</code>
+    <code>
+        {% error_class %}
+    </code>
 
-<code>
-    {% make_select %}
-</code>
+    <code>
+        {% make_checked %}
+    </code>
 
-<code>
-    {% set_value %}
-</code>
+    <code>
+        {% make_select %}
+    </code>
 
-</body>
-</html>
+    <code>
+        {% set_value %}
+    </code>
+{% endblock %}

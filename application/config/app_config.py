@@ -12,6 +12,6 @@ class Config(PWebAppConfig):
         name="example",
         import_name=__name__,
         template_folder="../template-assets/templates",
-        static_url_path="../template-assets/assets",
-        static_folder="assets"
+        static_folder="../template-assets/assets",
+        static_url_path="assets"
     )
