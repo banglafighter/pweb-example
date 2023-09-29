@@ -3,25 +3,31 @@
 {% block title %}SSR Example{% endblock %}
 
 {% block content %}
-    {% form_input field=form.firstname %}
 
-    <code>
+    <form class="needs-validation" novalidate>
+        {% form_input field=form.firstname %}
+        <button class="btn btn-success mt-2" type="submit">Submit</button>
+    </form>
+
+
+
+    <pre>
         {% input_error %}
-    </code>
+    </pre>
 
-    <code>
+    <pre>
         {% error_class %}
-    </code>
+    </pre>
 
-    <code>
+    <pre>
         {% make_checked %}
-    </code>
+    </pre>
 
-    <code>
+    <pre>
         {% make_select %}
-    </code>
+    </pre>
 
-    <code>
+    <pre>
         {% set_value %}
-    </code>
+    </pre>
 {% endblock %}

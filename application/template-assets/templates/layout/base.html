@@ -10,6 +10,9 @@
     <title>{% block title %}{{- pweb_app_name }}{% endblock %}</title>
 </head>
 <body>
-    {% block content %}{% endblock %}
+    <div class="container p-3">
+        {% block content %}{% endblock %}
+    </div>
+    <script src="{{ url_for('example.static', filename='js/lib/bootstrap-form-validator.js') }}"></script>
 </body>
 </html>
