@@ -5,7 +5,9 @@
 {% block content %}
 
     <form class="needs-validation" novalidate>
-        {% form_input field=form.firstname %}
+        {% form_input field=form.firstname, wrapper="m-3"%}
+        {% form_input field=form.bio, wrapper="m-3" %}
+        {% form_input field=form.sex, wrapper="m-3" %}
         <button class="btn btn-success mt-2" type="submit">Submit</button>
     </form>
 

@@ -13,6 +13,8 @@ class Member(PwebModel):
     sex = pweb_orm.Column("sex", pweb_orm.String(20), nullable=False)  # ENUM Select
     technology = pweb_orm.Column("technology", pweb_orm.String(40))  # Custom Select
 
+    bio = pweb_orm.Column("bio", pweb_orm.String(500))  # Textarea
+
     selectedCourse = pweb_orm.Column("selected_course", pweb_orm.String(40))  # Radio
 
     # these are for checkbox

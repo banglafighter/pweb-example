@@ -18,7 +18,8 @@ class MemberDetailsForm(PWebForm):
     dob = fields.Date(allow_none=True)
     image = FileField(allow_none=True).set_allowed_extension(["jpg", "png"])
     income = fields.Float(allow_none=True)
-    sex = EnumField(Sex, required=True, error_messages={"required": "Please select sex"})
+    sex = EnumField(Sex, required=True, error_messages={"required": "Please select sex"}, placeholder="Select Sex")
+    bio = fields.String(type="textarea", placeholder="Enter Biography")
     technology = fields.String(allow_none=True)
     selectedCourse = fields.String(allow_none=True)
 
