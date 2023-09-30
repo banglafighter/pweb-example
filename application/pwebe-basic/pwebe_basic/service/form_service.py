@@ -6,8 +6,18 @@ from pwebe_basic.model.Person import Person
 class FormService:
     form_data_crud: FormDataCRUD = FormDataCRUD(model=Person)
 
+    def _get_technology_options(self):
+        return {
+            "Computer": "Computer",
+            "Electrical": "Electrical",
+            "Mechanical": "Mechanical",
+            "Civil": "Civil",
+            "Electronics": "Electronics",
+        }
+
     def create(self):
         form = MemberCreateForm()
+        form.set_select_option("technology", select_options=self._get_technology_options())
         return self.form_data_crud.render("form/create", form=form)
 
     def update(self, model_id: int):

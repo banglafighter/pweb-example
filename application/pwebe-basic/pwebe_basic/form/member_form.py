@@ -22,7 +22,7 @@ class MemberDetailsForm(PWebForm):
     bio = fields.String(type="textarea", placeholder="Enter Biography")
     selectedCourse = fields.String(allow_none=True, radioItem={"python-web": "Python & Web Development", "java-web": "Java & Web Development"}, type="radio")
 
-    technology = fields.String(allow_none=True)
+    technology = fields.String(allow_none=True, type="select", placeholder="Select Technology")
 
     # For Checkbox
     hasLaptop = fields.Boolean(allow_none=True, type="checkbox")
