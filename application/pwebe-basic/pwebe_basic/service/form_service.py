@@ -1,10 +1,10 @@
 from pweb_form_rest.crud.pweb_form_data_crud import FormDataCRUD
 from pwebe_basic.form.member_form import MemberCreateForm
-from pwebe_basic.model.Person import Person
+from pwebe_basic.model.Member import Member
 
 
 class FormService:
-    form_data_crud: FormDataCRUD = FormDataCRUD(model=Person)
+    form_data_crud: FormDataCRUD = FormDataCRUD(model=Member)
 
     def _get_technology_options(self):
         return {
@@ -30,4 +30,4 @@ class FormService:
         pass
 
     def list(self):
-        pass
+        return self.form_data_crud.paginated_list(view_name="form/list")
