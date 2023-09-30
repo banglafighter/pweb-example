@@ -24,7 +24,7 @@ class MemberDetailsForm(PWebForm):
     selectedCourse = fields.String(allow_none=True)
 
     # For Checkbox
-    hasLaptop = fields.Boolean(allow_none=True)
+    hasLaptop = fields.Boolean(allow_none=True, type="checkbox")
     hasPenDrive = fields.Boolean(allow_none=True)
     hasSmartPhone = fields.Boolean(allow_none=True)
     hasPowerBank = fields.String(allow_none=True)
