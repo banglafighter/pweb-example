@@ -15,7 +15,7 @@ class MemberDetailsForm(PWebForm):
     email = fields.Email(required=True, error_messages={"required": "Please enter email."})
     password = fields.String(required=True, error_messages={"required": "Please enter password"}, type="password")
     age = fields.Integer(allow_none=True)
-    dob = fields.Date(allow_none=True)
+    dob = fields.Date(allow_none=True, label="Date of Birth")
     image = FileField(allow_none=True).set_allowed_extension(["jpg", "png"])
     income = fields.Float(allow_none=True)
     sex = EnumField(Sex, required=True, error_messages={"required": "Please select sex"}, placeholder="Select Sex")
@@ -25,9 +25,9 @@ class MemberDetailsForm(PWebForm):
 
     # For Checkbox
     hasLaptop = fields.Boolean(allow_none=True, type="checkbox")
-    hasPenDrive = fields.Boolean(allow_none=True)
-    hasSmartPhone = fields.Boolean(allow_none=True)
-    hasPowerBank = fields.String(allow_none=True)
+    hasPenDrive = fields.Boolean(allow_none=True, type="checkbox")
+    hasSmartPhone = fields.Boolean(allow_none=True, type="checkbox")
+    hasPowerBank = fields.String(allow_none=True, type="checkbox")
 
 
 class MemberCreateForm(MemberDetailsForm):

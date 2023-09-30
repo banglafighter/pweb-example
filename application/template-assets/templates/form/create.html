@@ -20,9 +20,25 @@
                     <div class="row">
                         {% form_input field=form.firstname, wrapper="mb-3 col-md-6" %}
                         {% form_input field=form.lastname, wrapper="mb-3 col-md-6" %}
-                        {% form_input field=form.bio, wrapper="mb-3 col-md-6" %}
-                        {% form_input field=form.sex, wrapper="mb-3 col-md-6" %}
+
+                        {% form_input field=form.email, wrapper="mb-3 col-md-6" %}
+                        {% form_input field=form.password, wrapper="mb-3 col-md-6" %}
+
+                        {% form_input field=form.dob, wrapper="mb-3 col-md-3" %}
+                        {% form_input field=form.age, wrapper="mb-3 col-md-3" %}
+                        {% form_input field=form.sex, wrapper="mb-3 col-md-3" %}
+                        {% form_input field=form.income, wrapper="mb-3 col-md-3" %}
+
+                        {% form_input field=form.image, wrapper="mb-3 col-md-6" %}
+                        {% form_input field=form.technology, wrapper="mb-3 col-md-6" %}
+
+                        {% form_input field=form.selectedCourse, wrapper="mb-3 col-md-12" %}
+
                         {% form_input field=form.hasLaptop, wrapper="col-md-12" %}
+                        {% form_input field=form.hasPenDrive, wrapper="col-md-12" %}
+                        {% form_input field=form.hasSmartPhone, wrapper="col-md-12" %}
+                        {% form_input field=form.hasPowerBank, wrapper="mb-3 col-md-12" %}
+                        {% form_input field=form.bio, wrapper="mb-3 col-md-12" %}
                         <div class="col-12">
                             <div class="float-end">
                                 <button type="submit" class="btn btn-primary">Create</button>
