@@ -20,8 +20,9 @@ class MemberDetailsForm(PWebForm):
     income = fields.Float(allow_none=True)
     sex = EnumField(Sex, required=True, error_messages={"required": "Please select sex"}, placeholder="Select Sex")
     bio = fields.String(type="textarea", placeholder="Enter Biography")
+    selectedCourse = fields.String(allow_none=True, radioItem={"python-web": "Python & Web Development", "java-web": "Java & Web Development"}, type="radio")
+
     technology = fields.String(allow_none=True)
-    selectedCourse = fields.String(allow_none=True)
 
     # For Checkbox
     hasLaptop = fields.Boolean(allow_none=True, type="checkbox")
