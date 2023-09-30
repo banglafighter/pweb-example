@@ -16,7 +16,7 @@
         <div class="card br-card rounded-0">
             <div class="card-body">
 
-                <form class="needs-validation" novalidate>
+                <form class="needs-validation" novalidate method="post" action="{{ url_for("form_controller.create") }}">
                     <div class="row">
                         {% form_input field=form.firstname, wrapper="mb-3 col-md-6" %}
                         {% form_input field=form.lastname, wrapper="mb-3 col-md-6" %}

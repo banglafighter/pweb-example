@@ -18,7 +18,7 @@ class FormService:
     def create(self):
         form = MemberCreateForm()
         form.set_select_option("technology", select_options=self._get_technology_options())
-        return self.form_data_crud.render("form/create", form=form)
+        return self.form_data_crud.create(view_name="form/create", form=form)
 
     def update(self, model_id: int):
         pass
