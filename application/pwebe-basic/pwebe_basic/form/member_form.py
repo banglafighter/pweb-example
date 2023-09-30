@@ -11,7 +11,7 @@ class Sex(BaseEnum):
 
 class MemberDetailsForm(PWebForm):
     firstname = fields.String(required=True, error_messages={"required": "Please enter first name"})
-    lastname = fields.String(allow_none=True)
+    lastname = fields.String(allow_none=True, helpText="You may ignore it.")
     email = fields.Email(required=True, error_messages={"required": "Please enter email."})
     password = fields.String(required=True, error_messages={"required": "Please enter password"}, type="password")
     age = fields.Integer(allow_none=True)
