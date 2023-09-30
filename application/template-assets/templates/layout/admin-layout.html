@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Create</title>
+
+        <link rel="stylesheet" href="{{ url_for('example.static', filename='css/lib/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('example.static', filename='css/admin-base.css') }}">
+    </head>
+  <body>
+  <!-- ============ Header ============ -->
+      <header>
+          <div class="container">
+              <div class="d-flex align-items-center justify-content-between">
+                  <!-- ============ Branding ============ -->
+                  <div class="header-content">
+                      <div class="logo">
+                          <a href="#" title="Bangla Fighter">
+                              <img src="{{ url_for('example.static', filename='img/logo.png') }}" alt="logo">
+                          </a>
+                      </div>
+                  </div>
+                  <!-- ============ Branding End============ -->
+
+
+                  <!-- ============ Right Menu ============ -->
+                  <ul class="nav col-lg-auto my-2 justify-content-end my-md-0 nav-white">
+                      <li class="menu-center">
+                          <a href="#" class="nav-link menu-icon" title="Home">
+                              <i class="fa-solid fa-house"></i>
+                          </a>
+                      </li>
+
+                      <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                          <a class="nav-link hide-arrow" data-bs-toggle="dropdown">
+                              <div class="avatar">
+                                  <img src="{{ url_for('example.static', filename='img/default-img.jpg') }}" alt="profile pic" class="w-px-40 h-auto rounded-circle border"/>
+                              </div>
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end profile-dropdown">
+                              <li>
+                                  <a class="dropdown-item" href="#">
+                                      <div class="d-flex">
+                                          <div class="flex-shrink-0 me-3">
+                                              <div class="avatar">
+                                                  <img src="{{ url_for('example.static', filename='img/default-img.jpg') }}" alt="profile pic" class="h-auto rounded-circle border"/>
+                                              </div>
+                                          </div>
+                                          <div class="flex-grow-1 operator">
+                                              <span class="fw-semi-bold d-block">Operator Name</span>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </li>
+                              <li>
+                                  <div class="dropdown-divider"></div>
+                              </li>
+                              <li>
+                                  <a class="dropdown-item drop-link" href="#">
+                                    <span class="p-menu-icon">
+                                         <i class="fa-solid fa-heart"></i>
+                                    </span>
+                                      <span class="align-middle">My Profile</span>
+                                  </a>
+                              </li>
+                              <li>
+                                  <div class="dropdown-divider"></div>
+                              </li>
+                              <li>
+                                  <a class="dropdown-item drop-link" href="#">
+                                    <span class="p-menu-icon">
+                                        <i class="fa-solid fa-right-from-bracket"></i>
+                                    </span>
+                                      <span class="align-middle">Log Out</span>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+                  <!-- ============ Right Menu End============ -->
+              </div>
+          </div>
+      </header>
+  <!-- ============ Header End ============ -->
+        <main>
+            <div class="container">
+                <div class="row">
+                    <!-- ============ Left Site ============ -->
+                    <div class="col-lg-2">
+                        <div class="navbar-vertical-content">
+                            <ul class="navbar-nav flex-column mb-2">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <div class="d-flex align-items-center">
+                                            <span class="nav-link-icon">
+                                               <i class="fa-solid fa-boxes-stacked"></i>
+                                            </span>
+                                            <span class="nav-link-text ps-1">Member</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </main>
+
+  <script src="{{ url_for('example.static', filename='js/lib/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('example.static', filename='js/lib/bootstrap-form-validator.js') }}"></script>
+  <script src="{{ url_for('example.static', filename='js/lib/fontawesome-all.min.js') }}"></script>
+
+  </body>
+</html>

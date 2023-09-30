@@ -28,3 +28,7 @@ class MemberDetailsForm(PWebForm):
     hasPenDrive = fields.Boolean(allow_none=True)
     hasSmartPhone = fields.Boolean(allow_none=True)
     hasPowerBank = fields.String(allow_none=True)
+
+
+class MemberCreateForm(MemberDetailsForm):
+    pass
