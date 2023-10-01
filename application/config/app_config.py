@@ -15,3 +15,6 @@ class Config(PWebAppConfig):
         static_folder="../template-assets/assets",
         static_url_path="assets"
     )
+
+    TOTAL_ITEM_PER_PAGE: int = 5
+    TABLE_ITEM_PER_PAGE_OPTIONS: str = [5, 10, 25, 50, 100, 200, 500]
