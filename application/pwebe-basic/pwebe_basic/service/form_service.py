@@ -1,6 +1,7 @@
 from pweb_form_rest.crud.pweb_form_data_crud import FormDataCRUD
 from pwebe_basic.form.member_form import MemberCreateForm
 from pwebe_basic.model.Member import Member
+from pweb import url_for
 
 
 class FormService:
@@ -18,7 +19,7 @@ class FormService:
     def create(self):
         form = MemberCreateForm()
         form.set_select_option("technology", select_options=self._get_technology_options())
-        return self.form_data_crud.create(view_name="form/create", form=form)
+        return self.form_data_crud.create(view_name="form/create", form=form, redirect_url=url_for("form_controller.list"))
 
     def update(self, model_id: int):
         pass

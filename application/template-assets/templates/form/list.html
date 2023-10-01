@@ -8,18 +8,17 @@
             <div class="bg-holder d-none d-lg-block bg-left"></div>
             <div class="card-body">
                 <div class="d-md-flex justify-content-between d-sm-block align-items-center">
-                    <div class="mb-0 heading-text">List (5)</div>
+                    <div class="mb-0 heading-text">Member ({{ table.total }})</div>
                     <form action="">
                         <div class="input-group align-items-center">
                             <input class="form-control" name="search" type="text" placeholder="Search" value="">
                             <button class="btn btn-secondary" type="submit" title="Search">
                                 <i class="fas fa-search"></i>
                             </button>
-                            <a href="#" class="btn btn-primary" type="submit"
-                               title="Add">
+                            <a href="{{ url_for("form_controller.create") }}" class="btn btn-primary" title="Add">
                                 <i class="fa-solid fa-plus"></i>
                             </a>
-                            <a class="btn btn-danger" title="Reload" href="#">
+                            <a class="btn btn-danger" title="Reload" href="{{ url_for("form_controller.list") }}">
                                 <i class="fas fa-sync"></i>
                             </a>
                         </div>
