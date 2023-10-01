@@ -1,6 +1,7 @@
 {% extends "layout/admin-layout.html" %}
 
-{% block title %}Create Member{% endblock %}
+{% set name = button|string + " Member" %}
+{% block title %}{{ name }}{% endblock %}
 
 {% block content %}
     <div class="col-lg-10 mt-3">
@@ -8,7 +9,7 @@
             <div class="bg-holder d-none d-lg-block bg-left"></div>
             <div class="card-body">
                 <div class="d-md-flex justify-content-between d-sm-block align-items-center">
-                    <div class="mb-0 heading-text">Create</div>
+                    <div class="mb-0 heading-text">{{ name }}</div>
                 </div>
             </div>
         </div>
@@ -16,13 +17,21 @@
         <div class="card br-card rounded-0">
             <div class="card-body">
 
-                <form class="needs-validation" novalidate method="post" action="{{ url_for("form_controller.create") }}">
+                <form class="needs-validation" novalidate method="post" action="{{ action }}">
                     <div class="row">
+                        {% if isEdit %}
+                            {% form_input field=form.id %}
+                        {% endif %}
+
                         {% form_input field=form.firstname, wrapper="mb-3 col-md-6" %}
                         {% form_input field=form.lastname, wrapper="mb-3 col-md-6" %}
 
-                        {% form_input field=form.email, wrapper="mb-3 col-md-6" %}
-                        {% form_input field=form.password, wrapper="mb-3 col-md-6" %}
+                        {% form_input field=form.email, wrapper="mb-3 {{ 'col-md-12' if isEdit else 'col-md-6' }}" %}
+
+                        {% if not isEdit %}
+                            {% form_input field=form.password, wrapper="mb-3 col-md-6" %}
+                        {% endif %}
+
 
                         {% form_input field=form.dob, wrapper="mb-3 col-md-3" %}
                         {% form_input field=form.age, wrapper="mb-3 col-md-3" %}
@@ -43,7 +52,7 @@
                         {% form_input field=form.bio, wrapper="mb-3 col-md-12" %}
                         <div class="col-12">
                             <div class="float-end">
-                                <button type="submit" class="btn btn-primary">Create</button>
+                                <button type="submit" class="btn btn-primary">{{ button }}</button>
                                 <a href="{{ url_for("form_controller.list") }}" class="btn btn-danger ms-2">Cancel</a>
                             </div>
                         </div>

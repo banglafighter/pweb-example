@@ -17,20 +17,22 @@ class FormService:
         }
 
     def create(self):
+        params = {"button": "Create", "action": url_for("form_controller.create")}
         form = MemberCreateForm()
         form.set_select_option("technology", select_options=self._get_technology_options())
-        return self.form_data_crud.create(view_name="form/form", form=form, redirect_url=url_for("form_controller.list"))
+        return self.form_data_crud.create(view_name="form/form", form=form, redirect_url=url_for("form_controller.list"), params=params)
 
     def update(self, model_id: int):
+        params = {"button": "Update", "action": url_for("form_controller.update", id=model_id)}
         form = MemberUpdateForm()
         form.set_select_option("technology", select_options=self._get_technology_options())
-        return self.form_data_crud.update(view_name="form/form", model_id=model_id, update_form=form, redirect_url=url_for("form_controller.list"))
+        return self.form_data_crud.update(view_name="form/form", model_id=model_id, update_form=form, redirect_url=url_for("form_controller.list"), params=params)
 
     def details(self, model_id: int):
-        pass
+        return self.form_data_crud.details("form/details", model_id=model_id, redirect_url=url_for("form_controller.list"))
 
     def delete(self, model_id: int):
-        pass
+        return self.form_data_crud.delete(model_id=model_id, redirect_url=url_for("form_controller.list"))
 
     def list(self):
         search_fields: list = ["firstname", "lastname", "email", "technology"]

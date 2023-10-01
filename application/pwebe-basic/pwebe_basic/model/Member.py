@@ -4,7 +4,7 @@ from pweb_orm import PwebModel, pweb_orm
 class Member(PwebModel):
     firstname = pweb_orm.Column("first_name", pweb_orm.String(150), nullable=False)
     lastname = pweb_orm.Column("last_name", pweb_orm.String(150))
-    email = pweb_orm.Column("email", pweb_orm.String(120), nullable=False, unique=True)
+    email = pweb_orm.Column("email", pweb_orm.String(120), nullable=False)
     password = pweb_orm.Column("password", pweb_orm.String(100), nullable=False)
     age = pweb_orm.Column("age", pweb_orm.Integer)
     dob = pweb_orm.Column("dob", pweb_orm.Date())  # Date Picker
