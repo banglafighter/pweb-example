@@ -3,8 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Create</title>
-
+        <title>{% block title %}{{- pweb_app_name }}{% endblock %}</title>
         <link rel="stylesheet" href="{{ url_for('example.static', filename='css/lib/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('example.static', filename='css/admin-base.css') }}">
     </head>

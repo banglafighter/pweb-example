@@ -27,6 +27,11 @@ def delete(id: int):
     return form_service.delete(id)
 
 
+@form_controller.route("/details/<int:id>", methods=['GET'])
+def details(id: int):
+    return form_service.details(id)
+
+
 @form_controller.route("/list", methods=['GET'])
 def list():
     return form_service.list()
