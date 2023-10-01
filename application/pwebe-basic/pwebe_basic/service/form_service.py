@@ -31,4 +31,5 @@ class FormService:
         pass
 
     def list(self):
-        return self.form_data_crud.paginated_list(view_name="form/list")
+        search_fields: list = ["firstname", "lastname", "email", "technology"]
+        return self.form_data_crud.paginated_list(view_name="form/list", search_fields=search_fields)

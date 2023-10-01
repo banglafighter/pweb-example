@@ -11,10 +11,8 @@
             {% include("snippet/table-top-action.html") %}
         {% endwith %}
 
-        <!-- ============ Content Start ============ -->
         <div class="card br-card rounded-0">
             <div class="card-body">
-                <!-- ============ Start Table ============ -->
                 <div class="table-responsive-sm ">
                     <table class="table table-bordered">
                         <thead class="table-secondary">
@@ -46,7 +44,6 @@
                 {% pagination current_page=table.page, total_page=table.pages %}
             </div>
         </div>
-        <!-- ============ Content End ============ -->
     </div>
 
 {% endblock %}
