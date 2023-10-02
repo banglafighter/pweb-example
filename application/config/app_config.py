@@ -13,7 +13,7 @@ class Config(PWebAppConfig):
         import_name=__name__,
         template_folder="../template-assets/templates",
         static_folder="../template-assets/assets",
-        static_url_path="assets"
+        static_url_path="app-assets"
     )
 
     TOTAL_ITEM_PER_PAGE: int = 5
