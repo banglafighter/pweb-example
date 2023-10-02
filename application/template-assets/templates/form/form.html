@@ -17,7 +17,7 @@
         <div class="card br-card rounded-0">
             <div class="card-body">
 
-                <form class="needs-validation" novalidate method="post" action="{{ action }}">
+                <form class="needs-validation" novalidate method="post" action="{{ action }}" enctype="multipart/form-data">
                     <div class="row">
                         {% if isEdit %}
                             {% form_input field=form.id %}
@@ -26,7 +26,8 @@
                         {% form_input field=form.firstname, wrapper="mb-3 col-md-6" %}
                         {% form_input field=form.lastname, wrapper="mb-3 col-md-6" %}
 
-                        {% form_input field=form.email, wrapper="mb-3 {{ 'col-md-12' if isEdit else 'col-md-6' }}" %}
+                        {% set email_class_name = "mb-3 " + 'col-md-12' if isEdit else 'col-md-6' %}
+                        {% form_input field=form.email, wrapper=email_class_name %}
 
                         {% if not isEdit %}
                             {% form_input field=form.password, wrapper="mb-3 col-md-6" %}
@@ -38,7 +39,15 @@
                         {% form_input field=form.sex, wrapper="mb-3 col-md-3" %}
                         {% form_input field=form.income, wrapper="mb-3 col-md-3" %}
 
-                        {% form_input field=form.image, wrapper="mb-3 col-md-6" %}
+                        {% if form.image.value %}
+                            {% form_input field=form.image, wrapper="mb-3 col-md-5" %}
+                            <div class="col-md-1 align-self-center">
+                                <img class="img-thumbnail" style="height:50px; width: 50px" src="/assets/form-file/{{ form.image.value }}">
+                            </div>
+                        {% else %}
+                            {% form_input field=form.image, wrapper="mb-3 col-md-6" %}
+                        {% endif %}
+
                         {% form_input field=form.technology, wrapper="mb-3 col-md-6" %}
 
                         {% for item in form.selectedCourse.radioItem.items() %}
