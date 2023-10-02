@@ -279,3 +279,7 @@ header {
 .form-check {
     padding-left: 2.3em;
 }
+
+.form-switch {
+    padding-left: 3.0em;
+}

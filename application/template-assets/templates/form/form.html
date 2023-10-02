@@ -42,13 +42,13 @@
                         {% form_input field=form.technology, wrapper="mb-3 col-md-6" %}
 
                         {% for item in form.selectedCourse.radioItem.items() %}
-                            {% form_input field=form.selectedCourse, wrapper="col-md-12", label=item[1], value=item[0] %}
+                            {% form_input field=form.selectedCourse, wrapper="col-md-12", label=item[1], checked=item[0] %}
                         {% endfor %}
 
                         {% form_input field=form.hasLaptop, wrapper="col-md-12" %}
                         {% form_input field=form.hasPenDrive, wrapper="col-md-12" %}
                         {% form_input field=form.hasSmartPhone, wrapper="col-md-12" %}
-                        {% form_input field=form.hasPowerBank, wrapper="mb-3 col-md-12" %}
+                        {% form_input field=form.hasPowerBank, wrapper="col-md-12 form-switch" %}
                         {% form_input field=form.bio, wrapper="mb-3 col-md-12" %}
                         <div class="col-12">
                             <div class="float-end">

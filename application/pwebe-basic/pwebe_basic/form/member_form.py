@@ -30,7 +30,7 @@ class MemberDetailsForm(PWebForm):
     hasLaptop = fields.Boolean(allow_none=True, type="checkbox")
     hasPenDrive = fields.Boolean(allow_none=True, type="checkbox")
     hasSmartPhone = fields.Boolean(allow_none=True, type="checkbox")
-    hasPowerBank = fields.String(allow_none=True, type="checkbox")
+    hasPowerBank = fields.String(allow_none=True, type="checkbox", checked="Yes", unchecked="No")
 
     @validates_schema
     def validates_schema(self, data, **kwargs):
