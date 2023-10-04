@@ -1,4 +1,4 @@
-from pweb import PWebComponentRegister
+from pweb import PWebComponentRegister, PWebModuleDetails
 from pwebe_basic.controller.basic_controller import basic_controller
 from pwebe_basic.controller.crud_controller import crud_controller
 from pwebe_basic.controller.file_holder_controller import file_holder_controller
@@ -9,6 +9,9 @@ from pwebe_basic.controller.ssr_controller import ssr_controller
 
 
 class PWebBasicModule(PWebComponentRegister):
+
+    def app_details(self) -> PWebModuleDetails:
+        return PWebModuleDetails(system_name="pweb-basic")
 
     def run_on_cli_init(self, pweb_app, config):
         pass
