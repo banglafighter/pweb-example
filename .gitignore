@@ -18,4 +18,5 @@ build/
 *.sqlite3
 
 /dependencies
+/application/pweb-ui
 /uploaded-resources
