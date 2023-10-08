@@ -1,19 +1,28 @@
 name: PWeb Example
 start_script:
-  - python --version
+  - git pull
 
 dependencies:
   - name: Source Development
     dir: dependencies
-    status: inactive
+    status: active
     clone:
       branch: dev
-      status: inactive
+      status: active
+      script:
+        - python setup.py develop --uninstall
+        - python setup.py develop
       repo:
+        - url: https://github.com/problemfighter/ppy-common.git
+        - url: https://github.com/problemfighter/ppy-file-text.git
+        - url: https://github.com/problemfighter/ppy-jsonyml.git
+        - url: https://github.com/problemfighter/pweb-auth.git
+        - url: https://github.com/problemfighter/pweb-form-rest.git
+        - url: https://github.com/problemfighter/pweb-orm.git
+        - url: https://github.com/problemfighter/pweb-ssr.git
+        - url: https://github.com/problemfighter/pweb-cli.git
         - url: https://github.com/problemfighter/pweb.git
-          script:
-            - python setup.py develop --uninstall
-            - python setup.py develop
+
   - name: Application
     dir: application
     status: inactive
