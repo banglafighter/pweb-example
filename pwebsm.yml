@@ -1,0 +1,30 @@
+name: PWeb Example
+start_script:
+  - python --version
+
+dependencies:
+  - name: Source Development
+    dir: dependencies
+    status: inactive
+    clone:
+      branch: dev
+      status: inactive
+      repo:
+        - url: https://github.com/problemfighter/pweb.git
+          script:
+            - python setup.py develop --uninstall
+            - python setup.py develop
+  - name: Application
+    dir: application
+    status: inactive
+    module:
+      status: inactive
+      script:
+        - python setup.py develop --uninstall
+        - python setup.py develop
+      subdir:
+        - name: example-app
+
+end_script:
+  - python setup.py develop --uninstall
+  - python setup.py develop
