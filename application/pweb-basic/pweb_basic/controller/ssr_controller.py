@@ -1,5 +1,5 @@
 from pweb import Blueprint
-from pwebe_basic.service.ssr_service import SSRService
+from pweb_basic.service.ssr_service import SSRService
 
 url_prefix = "/ssr"
 ssr_controller = Blueprint(

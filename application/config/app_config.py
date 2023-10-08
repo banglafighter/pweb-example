@@ -1,11 +1,14 @@
 from pweb import PWebAppConfig
 from pweb_auth import AuthBase
+from pweb_basic.common.app_ssr_ui_helper import AppSSRUIHelper
 from pweb_form_rest import PWebSSRUIHelper
 from pweb_ssr import SSRTemplateAssets
-from pwebe_basic.common.app_ssr_ui_helper import AppSSRUIHelper
 
 
 class Config(PWebAppConfig):
+    APP_NAME = "PWeb Example"
+    PORT: int = 1212
+
     SWAGGER_TITLE: str = "Swagger Example App"
     SSR_UI_HELPER: PWebSSRUIHelper = AppSSRUIHelper()
 

@@ -3,7 +3,7 @@ from pweb import fields, FileField
 from pweb_form_rest import PWebForm
 from pweb_form_rest.common.pweb_custom_field import BaseEnum, EnumField
 from pweb_orm import PWebORMUtil
-from pwebe_basic.model.Member import Member
+from pweb_basic.model.Member import Member
 
 
 class Sex(BaseEnum):

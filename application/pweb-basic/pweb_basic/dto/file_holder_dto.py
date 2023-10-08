@@ -1,7 +1,7 @@
 from marshmallow import fields
 from pweb_form_rest import FileField
 from pweb_form_rest.schema.pweb_rest_schema import PWebRestDTO
-from pwebe_basic.model.FileHolder import FileHolder
+from pweb_basic.model.FileHolder import FileHolder
 
 
 class UploadAnyFileDTO(PWebRestDTO):

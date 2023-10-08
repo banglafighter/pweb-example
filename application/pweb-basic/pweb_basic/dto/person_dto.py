@@ -1,6 +1,6 @@
 from pweb import fields, FileField
 from pweb_form_rest.schema.pweb_rest_schema import PWebRestDTO
-from pwebe_basic.model.Person import Person
+from pweb_basic.model.Person import Person
 
 
 class PersonDetailsDTO(PWebRestDTO):

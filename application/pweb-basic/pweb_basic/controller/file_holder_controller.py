@@ -1,8 +1,8 @@
 from pweb import Blueprint
 from pweb_form_rest import pweb_upload_endpoint
-from pwebe_basic.dto.file_holder_dto import UploadAnyFileDTO, UploadPDFFileDTO, UploadDocFileDTO, UploadArchiveFileDTO, \
+from pweb_basic.dto.file_holder_dto import UploadAnyFileDTO, UploadPDFFileDTO, UploadDocFileDTO, UploadArchiveFileDTO, \
     UploadImageFileDTO, UploadCustomNameFileDTO, UploadPrefixNameFileDTO, UploadSizedFileDTO, DataAndUploadFileDTO
-from pwebe_basic.service.file_holder_service import FileHolderService
+from pweb_basic.service.file_holder_service import FileHolderService
 
 url_prefix = "/api/v1/file-holder"
 file_holder_controller = Blueprint(

@@ -1,40 +1,35 @@
-from setuptools import setup, find_packages
-import os
+import os.path
 import pathlib
+from os.path import exists
+from setuptools import setup, find_packages
+
 
 CURRENT_DIR = pathlib.Path(__file__).parent
-README = (CURRENT_DIR / "README.md").read_text()
+long_description = ""
+readme_md_file = os.path.join(CURRENT_DIR, "README.md")
+if exists(readme_md_file):
+    long_description = pathlib.Path(readme_md_file).read_text()
 
 env = os.environ.get('source')
 
 
 def get_dependencies():
-    dependency = ["pweb"]
+    dependency = []
 
-    if env and env == "dev":
+    if env and env == "code":
         return dependency
 
-    return dependency + []
+    return dependency + ["pwebf"]
 
 
 setup(
     name='pweb-example',
     version='1.0.0',
-    url='https://github.com/problemfighter/pweb-example',
-    license='Apache 2.0',
-    author='Problem Fighter',
-    author_email='problemfighter.com@gmail.com',
-    description='PWeb Example Project',
-    long_description=README,
-    long_description_content_type='text/markdown',
+    long_description=long_description,
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
     platforms='any',
     install_requires=get_dependencies(),
-    classifiers=[
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License',
-        'Programming Language :: Python',
-    ]
+    classifiers=[]
 )

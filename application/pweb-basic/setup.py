@@ -11,14 +11,14 @@ env = os.environ.get('source')
 def get_dependencies():
     dependency = []
 
-    if env and env == "dev":
+    if env and env == "code":
         return dependency
 
-    return dependency + ["pweb", "pweb-auth"]
+    return dependency + ["pwebf", "pweb-auth"]
 
 
 setup(
-    name='pwebe-basic',
+    name='pweb-basic',
     version='1.0.0',
     url='https://github.com/problemfighter/pweb-example',
     license='Apache 2.0',

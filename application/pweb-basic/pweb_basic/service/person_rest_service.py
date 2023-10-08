@@ -1,6 +1,6 @@
 from pweb import RESTDataCRUD
-from pwebe_basic.dto.person_dto import PersonCreateDTO, PersonDetailsDTO, PersonUpdateDTO
-from pwebe_basic.model.Person import Person
+from pweb_basic.dto.person_dto import PersonCreateDTO, PersonDetailsDTO, PersonUpdateDTO
+from pweb_basic.model.Person import Person
 
 
 class PersonRESTService:

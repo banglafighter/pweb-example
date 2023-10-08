@@ -1,5 +1,5 @@
 from pweb_form_rest import ssr_ui_render
-from pwebe_basic.form.member_form import MemberDetailsForm
+from pweb_basic.form.member_form import MemberDetailsForm
 
 
 class SSRService:

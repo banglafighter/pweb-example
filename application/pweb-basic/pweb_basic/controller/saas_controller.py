@@ -4,7 +4,7 @@ from application.config.app_config import Config
 from ppy_file_text import FileUtil
 from pweb import Blueprint, pweb_orm, request
 from pweb_orm import PWebSaaS
-from pwebe_basic.model.Person import Person
+from pweb_basic.model.Person import Person
 
 url_prefix = "/saas"
 saas_controller = Blueprint(

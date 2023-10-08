@@ -1,7 +1,7 @@
 from pweb import Blueprint, pweb_endpoint, pweb_paginate_endpoint
 from pweb_form_rest import pweb_upload_endpoint
-from pwebe_basic.dto.person_dto import PersonCreateDTO, PersonUpdateDTO, PersonDetailsDTO, PersonUploadDTO
-from pwebe_basic.service.person_rest_service import PersonRESTService
+from pweb_basic.dto.person_dto import PersonCreateDTO, PersonUpdateDTO, PersonDetailsDTO, PersonUploadDTO
+from pweb_basic.service.person_rest_service import PersonRESTService
 
 url_prefix = "/api/v1/rest"
 rest_api_controller = Blueprint(

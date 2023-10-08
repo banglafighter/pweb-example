@@ -1,6 +1,6 @@
 from pweb import PWebEngine
 
-pweb_engine = PWebEngine.bstart("PWebExampleApplication", __file__)
+pweb_engine = PWebEngine.bstart("PWebExample", __file__)
 pweb_engine.version = "1.0.0"
 
 cli = pweb_engine.cli

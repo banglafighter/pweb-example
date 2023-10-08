@@ -1,11 +1,11 @@
 from pweb import PWebComponentRegister, PWebModuleDetails
-from pwebe_basic.controller.basic_controller import basic_controller
-from pwebe_basic.controller.crud_controller import crud_controller
-from pwebe_basic.controller.file_holder_controller import file_holder_controller
-from pwebe_basic.controller.form_controller import form_controller
-from pwebe_basic.controller.rest_api_controller import rest_api_controller
-from pwebe_basic.controller.saas_controller import saas_controller
-from pwebe_basic.controller.ssr_controller import ssr_controller
+from pweb_basic.controller.basic_controller import basic_controller
+from pweb_basic.controller.crud_controller import crud_controller
+from pweb_basic.controller.file_holder_controller import file_holder_controller
+from pweb_basic.controller.form_controller import form_controller
+from pweb_basic.controller.rest_api_controller import rest_api_controller
+from pweb_basic.controller.saas_controller import saas_controller
+from pweb_basic.controller.ssr_controller import ssr_controller
 
 
 class PWebBasicModule(PWebComponentRegister):

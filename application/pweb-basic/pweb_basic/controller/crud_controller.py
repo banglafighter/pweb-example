@@ -1,5 +1,5 @@
 from pweb import Blueprint
-from pwebe_basic.model.Person import Person
+from pweb_basic.model.Person import Person
 
 url_prefix = "/crud"
 crud_controller = Blueprint(

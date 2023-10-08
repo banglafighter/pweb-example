@@ -1,6 +1,6 @@
 from pweb import Blueprint
 from pweb_form_rest import ssr_ui_render
-from pwebe_basic.service.form_service import FormService
+from pweb_basic.service.form_service import FormService
 
 url_prefix = "/form"
 form_controller = Blueprint(

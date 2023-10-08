@@ -1,0 +1,42 @@
+name: PWeb Example
+start_script:
+  - git pull
+
+dependencies:
+  - name: Source Development
+    dir: dependencies
+    status: active
+    clone:
+      branch: dev
+      status: active
+      source: code
+      script:
+        - python setup.py develop --uninstall
+        - python setup.py develop
+      repo:
+        - url: https://github.com/problemfighter/ppy-common.git
+        - url: https://github.com/problemfighter/ppy-file-text.git
+        - url: https://github.com/problemfighter/ppy-jsonyml.git
+        - url: https://github.com/problemfighter/pweb-auth.git
+        - url: https://github.com/problemfighter/pweb-form-rest.git
+        - url: https://github.com/problemfighter/pweb-orm.git
+        - url: https://github.com/problemfighter/pweb-ssr.git
+        - url: https://github.com/problemfighter/pweb-cli.git
+        - url: https://github.com/problemfighter/pweb.git
+        - url: https://github.com/problemfighter/pweb-ui.git
+
+  - name: Application
+    dir: application
+    status: active
+    module:
+      status: active
+      source: code
+      script:
+        - python setup.py develop --uninstall
+        - python setup.py develop
+      subdir:
+        - name: pweb-basic
+
+end_script:
+  - python setup.py develop --uninstall
+  - python setup.py develop
