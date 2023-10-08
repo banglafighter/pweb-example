@@ -16,7 +16,7 @@ env = os.environ.get('source')
 def get_dependencies():
     dependency = []
 
-    if env and env == "dev":
+    if env and env == "code":
         return dependency
 
     return dependency + ["pwebf"]

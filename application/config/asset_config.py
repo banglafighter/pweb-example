@@ -3,4 +3,5 @@ from ppy_file_text import FileUtil
 
 
 class AssetConfig:
-    profile = FileUtil.join_path(Config.UPLOADED_STATIC_RESOURCES, "profile")
+    fileHolder = FileUtil.join_path(Config.UPLOADED_STATIC_RESOURCES, "file-holder")
+    formFile = FileUtil.join_path(Config.UPLOADED_STATIC_RESOURCES, "form-file")
