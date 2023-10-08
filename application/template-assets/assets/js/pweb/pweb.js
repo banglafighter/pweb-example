@@ -1,2 +1,0 @@
-PWeb = {}
-PWeb.baseURL = ""
