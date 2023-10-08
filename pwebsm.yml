@@ -9,6 +9,7 @@ dependencies:
     clone:
       branch: dev
       status: active
+      source: code
       script:
         - python setup.py develop --uninstall
         - python setup.py develop
