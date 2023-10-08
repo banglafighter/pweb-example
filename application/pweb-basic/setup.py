@@ -14,7 +14,7 @@ def get_dependencies():
     if env and env == "code":
         return dependency
 
-    return dependency + ["pweb", "pweb-auth"]
+    return dependency + ["pwebf", "pweb-auth"]
 
 
 setup(

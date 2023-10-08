@@ -1,4 +1,4 @@
-from application.config.assets_config import AssetsConfig
+from application.config.asset_config import AssetConfig
 from pweb_form_rest.crud.pweb_form_data_crud import FormDataCRUD
 from pweb_basic.form.member_form import MemberCreateForm, MemberUpdateForm
 from pweb_basic.model.Member import Member
@@ -21,13 +21,13 @@ class FormService:
         params = {"button": "Create", "action": url_for("form_controller.create")}
         form = MemberCreateForm()
         form.set_select_option("technology", select_options=self._get_technology_options())
-        return self.form_data_crud.create(view_name="form/form", form=form, redirect_url=url_for("form_controller.list"), params=params, upload_path=AssetsConfig.formFile)
+        return self.form_data_crud.create(view_name="form/form", form=form, redirect_url=url_for("form_controller.list"), params=params, upload_path=AssetConfig.formFile)
 
     def update(self, model_id: int):
         params = {"button": "Update", "action": url_for("form_controller.update", id=model_id)}
         form = MemberUpdateForm()
         form.set_select_option("technology", select_options=self._get_technology_options())
-        return self.form_data_crud.update(view_name="form/form", model_id=model_id, update_form=form, redirect_url=url_for("form_controller.list"), params=params, upload_path=AssetsConfig.formFile)
+        return self.form_data_crud.update(view_name="form/form", model_id=model_id, update_form=form, redirect_url=url_for("form_controller.list"), params=params, upload_path=AssetConfig.formFile)
 
     def details(self, model_id: int):
         return self.form_data_crud.details("form/details", model_id=model_id, redirect_url=url_for("form_controller.list"))

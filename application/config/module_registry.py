@@ -8,7 +8,7 @@ class Register(PWebModuleRegister):
 
     def get_module_list(self) -> list:
         return [
-            PWebBasicModule,
             PWebSSRModule,
-            PWebAuthModule
+            PWebAuthModule,
+            PWebBasicModule,
         ]
