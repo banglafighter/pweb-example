@@ -26,14 +26,15 @@ dependencies:
 
   - name: Application
     dir: application
-    status: inactive
+    status: active
     module:
-      status: inactive
+      status: active
+      source: code
       script:
         - python setup.py develop --uninstall
         - python setup.py develop
       subdir:
-        - name: example-app
+        - name: pweb-basic
 
 end_script:
   - python setup.py develop --uninstall
