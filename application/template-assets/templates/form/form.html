@@ -1,0 +1,74 @@
+{% extends "layout/admin-layout.html" %}
+
+{% set name = button|string + " Member" %}
+{% block title %}{{ name }}{% endblock %}
+
+{% block content %}
+    <div class="col-lg-10 mt-3">
+        <div class="card br-card rounded-0 card-t-head mb-3">
+            <div class="bg-holder d-none d-lg-block bg-left"></div>
+            <div class="card-body">
+                <div class="d-md-flex justify-content-between d-sm-block align-items-center">
+                    <div class="mb-0 heading-text">{{ name }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card br-card rounded-0">
+            <div class="card-body">
+
+                <form class="needs-validation" novalidate method="post" action="{{ action }}" enctype="multipart/form-data">
+                    <div class="row">
+                        {% if isEdit %}
+                            {% form_input field=form.id %}
+                        {% endif %}
+
+                        {% form_input field=form.firstname, wrapper="mb-3 col-md-6" %}
+                        {% form_input field=form.lastname, wrapper="mb-3 col-md-6" %}
+
+                        {% set email_class_name = "mb-3 " + 'col-md-12' if isEdit else 'col-md-6' %}
+                        {% form_input field=form.email, wrapper=email_class_name %}
+
+                        {% if not isEdit %}
+                            {% form_input field=form.password, wrapper="mb-3 col-md-6" %}
+                        {% endif %}
+
+
+                        {% form_input field=form.dob, wrapper="mb-3 col-md-3" %}
+                        {% form_input field=form.age, wrapper="mb-3 col-md-3" %}
+                        {% form_input field=form.sex, wrapper="mb-3 col-md-3" %}
+                        {% form_input field=form.income, wrapper="mb-3 col-md-3" %}
+
+                        {% if form.image.value %}
+                            {% form_input field=form.image, wrapper="mb-3 col-md-5" %}
+                            <div class="col-md-1 align-self-center">
+                                <img class="img-thumbnail" style="height:50px; width: 50px" src="/assets/form-file/{{ form.image.value }}">
+                            </div>
+                        {% else %}
+                            {% form_input field=form.image, wrapper="mb-3 col-md-6" %}
+                        {% endif %}
+
+                        {% form_input field=form.technology, wrapper="mb-3 col-md-6" %}
+
+                        {% for item in form.selectedCourse.radioItem.items() %}
+                            {% form_input field=form.selectedCourse, wrapper="col-md-12", label=item[1], checked=item[0] %}
+                        {% endfor %}
+
+                        {% form_input field=form.hasLaptop, wrapper="col-md-12" %}
+                        {% form_input field=form.hasPenDrive, wrapper="col-md-12" %}
+                        {% form_input field=form.hasSmartPhone, wrapper="col-md-12" %}
+                        {% form_input field=form.hasPowerBank, wrapper="col-md-12 form-switch" %}
+                        {% form_input field=form.bio, wrapper="mb-3 col-md-12" %}
+                        <div class="col-12">
+                            <div class="float-end">
+                                <button type="submit" class="btn btn-primary">{{ button }}</button>
+                                <a href="{{ url_for("form_controller.list") }}" class="btn btn-danger ms-2">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

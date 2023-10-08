@@ -1,0 +1,2 @@
+PWeb = {}
+PWeb.baseURL = ""

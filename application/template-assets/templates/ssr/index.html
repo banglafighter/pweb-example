@@ -1,0 +1,40 @@
+{% extends "layout/base.html" %}
+
+{% block title %}SSR Example{% endblock %}
+
+{% block content %}
+
+    <form class="needs-validation" novalidate>
+        {% form_input field=form.firstname, wrapper="m-3"%}
+        {% form_input field=form.bio, wrapper="m-3" %}
+        {% form_input field=form.sex, wrapper="m-3" %}
+        {% form_input field=form.hasLaptop, wrapper="m-3" %}
+        <button class="btn btn-success mt-2" type="submit">Submit</button>
+    </form>
+
+
+
+    <pre>
+        {% input_error field=form.firstname %}
+    </pre>
+
+    <pre>
+        {% input_help field=form.lastname %}
+    </pre>
+
+    <pre>
+        {% error_class field=form.firstname %}
+    </pre>
+
+    <pre>
+        {% make_checked key="yes", value="yes" %}
+    </pre>
+
+    <pre>
+        {% make_select key="yes", value="yes" %}
+    </pre>
+
+    <pre>
+        {% set_value value="value"%}
+    </pre>
+{% endblock %}

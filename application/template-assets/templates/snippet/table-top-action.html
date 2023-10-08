@@ -1,0 +1,27 @@
+<div class="card mb-3">
+    <div class="bg-holder d-none d-lg-block bg-card pf-bg-left" style=" background-image: url('{{ url_for('example.static', filename='img/header-bg.png') }}');">
+    </div>
+    <div class="card-body pf-table-header position-relative">
+        <div class="d-md-flex justify-content-between d-sm-block align-items-center">
+            <div class="mb-0 heading-text">{{- name }} ({{ total }})</div>
+            <form class="pf-table-action" action="">
+                <div class="input-group align-items-center">
+                    <input class="form-control remove-focus" type="text" placeholder="Search" {% search_name_value %}>
+                    <button class="btn btn-secondary  pf-icon-button" type="submit" title="Search">
+                         <i class="fas fa-search"></i>
+                    </button>
+                    {{ top_main_action_item|safe }}
+                    {% if create %}
+                        <a title="Create" class="btn btn-primary  pf-icon-button" href="{{- create }}">
+                            <i class="fas fa-plus-circle"></i>
+                        </a>
+                    {% endif %}
+                    {{ middle_main_action_item|safe }}
+                    <a class="btn btn-danger  pf-icon-button" title="Reload" href="{{- reload }}">
+                         <i class="fas fa-sync"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

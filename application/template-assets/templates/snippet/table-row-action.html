@@ -1,0 +1,37 @@
+<td class="text-center">
+    <div class="dropdown">
+        <span data-bs-toggle="dropdown">
+            <span class="text-black btn-sm cursor-pointer">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </span>
+        </span>
+        <ul class="dropdown-menu">
+            {{ top_action_item|safe }}
+            {% if details %}
+                <li class=" dropdown-item">
+                    <a href="{{- details }}">
+                        <i class="fa-regular fa-eye pe-1"></i> Details
+                    </a>
+                </li>
+            {% endif %}
+            {% if edit %}
+                <li class=" dropdown-item">
+                    <a href="{{- edit }}">
+                        <i class="fa-solid fa-pencil pe-1"></i>
+                        Edit
+                    </a>
+                </li>
+            {% endif %}
+            {{ middle_action_item|safe }}
+            {% if delete %}
+                <li class="dropdown-item">
+                    <a href="{{- delete }}" class="delete-confirmation">
+                        <i class="fa-solid fa-trash-can pe-1"></i>
+                        Delete
+                    </a>
+                </li>
+            {% endif %}
+            {{ end_action_item|safe }}
+        </ul>
+    </div>
+</td>
