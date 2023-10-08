@@ -23,6 +23,7 @@ dependencies:
         - url: https://github.com/problemfighter/pweb-ssr.git
         - url: https://github.com/problemfighter/pweb-cli.git
         - url: https://github.com/problemfighter/pweb.git
+        - url: https://github.com/problemfighter/pweb-ui.git
 
   - name: Application
     dir: application
