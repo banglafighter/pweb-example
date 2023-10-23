@@ -20,10 +20,10 @@ def get_dependencies():
 setup(
     name='pweb-basic',
     version='1.0.0',
-    url='https://github.com/problemfighter/pweb-example',
+    url='https://github.com/banglafighter/pweb-example',
     license='Apache 2.0',
     author='Problem Fighter',
-    author_email='problemfighter.com@gmail.com',
+    author_email='banglafighter.com@gmail.com',
     description='Basic Example',
     long_description=README,
     long_description_content_type='text/markdown',

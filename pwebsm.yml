@@ -14,16 +14,16 @@ dependencies:
         - python setup.py develop --uninstall
         - python setup.py develop
       repo:
-        - url: https://github.com/problemfighter/ppy-common.git
-        - url: https://github.com/problemfighter/ppy-file-text.git
-        - url: https://github.com/problemfighter/ppy-jsonyml.git
-        - url: https://github.com/problemfighter/pweb-auth.git
-        - url: https://github.com/problemfighter/pweb-form-rest.git
-        - url: https://github.com/problemfighter/pweb-orm.git
-        - url: https://github.com/problemfighter/pweb-ssr.git
-        - url: https://github.com/problemfighter/pweb-cli.git
-        - url: https://github.com/problemfighter/pweb.git
-        - url: https://github.com/problemfighter/pweb-ui.git
+        - url: https://github.com/banglafighter/ppy-common.git
+        - url: https://github.com/banglafighter/ppy-file-text.git
+        - url: https://github.com/banglafighter/ppy-jsonyml.git
+        - url: https://github.com/banglafighter/pweb-auth.git
+        - url: https://github.com/banglafighter/pweb-form-rest.git
+        - url: https://github.com/banglafighter/pweb-orm.git
+        - url: https://github.com/banglafighter/pweb-ssr.git
+        - url: https://github.com/banglafighter/pweb-cli.git
+        - url: https://github.com/banglafighter/pweb.git
+        - url: https://github.com/banglafighter/pweb-ui.git
 
   - name: Application
     dir: application
