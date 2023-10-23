@@ -22,7 +22,7 @@ setup(
     version='1.0.0',
     url='https://github.com/banglafighter/pweb-example',
     license='Apache 2.0',
-    author='Problem Fighter',
+    author='Bangla Fighter',
     author_email='banglafighter.com@gmail.com',
     description='Basic Example',
     long_description=README,

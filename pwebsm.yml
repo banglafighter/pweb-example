@@ -12,7 +12,7 @@ dependencies:
       source: code
       script:
         - python setup.py develop --uninstall
-        - python setup.py develop
+        - pip install -e
       repo:
         - url: https://github.com/banglafighter/ppy-common.git
         - url: https://github.com/banglafighter/ppy-file-text.git
@@ -39,4 +39,4 @@ dependencies:
 
 end_script:
   - python setup.py develop --uninstall
-  - python setup.py develop
+  - pip install -e
