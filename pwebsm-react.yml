@@ -1,0 +1,20 @@
+name: React UI Dependencies
+start_script:
+  - git pull
+  - npm install -g yarn
+
+dependencies:
+  - name: Source Development
+    dir: dependencies/ui
+    status: active
+    clone:
+      branch: dev
+      status: active
+      source: code
+      repo:
+        - url: https://github.com/banglafighter/react-rapid.git
+        - url: https://github.com/banglafighter/pweb-react.git
+        - url: https://github.com/banglafighter/react-i18n.git
+
+end_script:
+  - yarn install
