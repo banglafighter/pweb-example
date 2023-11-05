@@ -1,6 +1,7 @@
 from pweb import PWebComponentRegister, PWebModuleDetails
 from pweb_basic.controller.basic_controller import basic_controller
 from pweb_basic.controller.crud_controller import crud_controller
+from pweb_basic.controller.exp_controller import ExpController
 from pweb_basic.controller.file_holder_controller import file_holder_controller
 from pweb_basic.controller.form_controller import form_controller
 from pweb_basic.controller.form_raw_controller import form_raw_controller
@@ -32,3 +33,4 @@ class PWebBasicModule(PWebComponentRegister):
         pweb_app.register_blueprint(form_controller)
         pweb_app.register_blueprint(ssr_controller)
         pweb_app.register_blueprint(form_raw_controller)
+        ExpController.init_controller(pweb_app)

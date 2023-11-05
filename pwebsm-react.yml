@@ -12,11 +12,11 @@ dependencies:
       status: active
       source: code
       repo:
-        - url: https://github.com/banglafighter/react-rapid.git
+        - url: https://github.com/banglafighter/react-rapid-app.git
         - url: https://github.com/banglafighter/pweb-react.git
-        - url: https://github.com/banglafighter/react-i18n.git
+        - url: https://github.com/banglafighter/react-rapid-i18n.git
         - url: https://github.com/banglafighter/react-rapid-bootstrap.git
-        - url: https://github.com/banglafighter/react-rapid-bootstrap.git
+        - url: https://github.com/banglafighter/react-boot-spec.git
 
 end_script:
   - yarn install
