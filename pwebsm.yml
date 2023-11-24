@@ -1,5 +1,7 @@
 name: PWeb Example
 start_script:
+  - python -m pip install --upgrade pip
+  - python --version
   - git pull
 
 dependencies:
@@ -11,8 +13,7 @@ dependencies:
       status: active
       source: code
       script:
-        - python setup.py develop --uninstall
-        - python setup.py develop
+        - pip install -e .
       repo:
         - url: https://github.com/banglafighter/ppy-common.git
         - url: https://github.com/banglafighter/ppy-file-text.git
@@ -32,11 +33,9 @@ dependencies:
       status: active
       source: code
       script:
-        - python setup.py develop --uninstall
-        - python setup.py develop
+        - pip install -e .
       subdir:
         - name: pweb-basic
 
 end_script:
-  - python setup.py develop --uninstall
-  - pip install -e
+  - pip install -e .
