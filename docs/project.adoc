@@ -1,0 +1,6 @@
+
+
+== How to start project from start
+
+* Install ``pip install -U pwebb``
+* Create new project by ``pwebcli project init -n <specify_project_name>``
