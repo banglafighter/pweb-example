@@ -1,6 +1,6 @@
 from application.config.asset_config import AssetConfig
 from pweb_form_rest.crud.pweb_form_data_crud import FormDataCRUD
-from pweb_basic.form.member_form import MemberCreateForm, MemberUpdateForm
+from pweb_basic.form.member_form import MemberCreateForm, MemberUpdateForm, MemberDetailsForm
 from pweb_basic.model.Member import Member
 from pweb import url_for
 
@@ -30,7 +30,7 @@ class FormService:
         return self.form_data_crud.update(view_name="form/form", model_id=model_id, update_form=form, redirect_url=url_for("form_controller.list"), params=params, upload_path=AssetConfig.formFile)
 
     def details(self, model_id: int):
-        return self.form_data_crud.details("form/details", model_id=model_id, redirect_url=url_for("form_controller.list"))
+        return self.form_data_crud.details("form/details", model_id=model_id, redirect_url=url_for("form_controller.list"), display_from=MemberDetailsForm())
 
     def delete(self, model_id: int):
         return self.form_data_crud.delete(model_id=model_id, redirect_url=url_for("form_controller.list"))

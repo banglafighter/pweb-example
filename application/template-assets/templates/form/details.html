@@ -14,97 +14,24 @@
         </div>
         <div class="card br-card rounded-0">
             <div class="card-body">
-                <div class="row form-details gy-3">
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.firstname |default("", True) }}</div>
-                            <label class="details-label-fs">First Name</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.lastname |default("", True) }}</div>
-                            <label class="details-label-fs">Last Name</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.age |default("", True) }}</div>
-                            <label class="details-label-fs">Age</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.dob |default("", True) }}</div>
-                            <label class="details-label-fs">Date of Birth</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.income |default("", True) }}</div>
-                            <label class="details-label-fs">Income</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.sex |default("", True) }}</div>
-                            <label class="details-label-fs">Sex</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.selectedCourse |default("", True) }}</div>
-                            <label class="details-label-fs">Course</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.technology |default("", True) }}</div>
-                            <label class="details-label-fs">Technology</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.hasLaptop |default("", True) }}</div>
-                            <label class="details-label-fs">Has Laptop</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.hasPenDrive |default("", True) }}</div>
-                            <label class="details-label-fs">Has Pen Drive</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.hasSmartPhone |default("", True) }}</div>
-                            <label class="details-label-fs">Has Smart Phone</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.hasPowerBank |default("", True) }}</div>
-                            <label class="details-label-fs">Has Power Bank</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">{{ data.bio |default("", True) }}</div>
-                            <label class="details-label-fs">Biography</label>
-                        </div>
-                    </div>
+                <div class="row form-details g-2">
 
-                    <div class="col-md-6">
-                        <div class="form-floating">
-                            <div class="form-control fw-bold h-auto min-h-details">
-                                {{ data.email |default("", True) }}
-                            </div>
-                            <label class="details-label-fs">Email</label>
-                        </div>
-                    </div>
+                    {% form_view field=form.firstname, wrapper="col-md-6" %}
+                    {% form_view field=form.lastname, wrapper="col-md-6" %}
+                    {% form_view field=form.age, wrapper="col-md-6" %}
+                    {% form_view field=form.dob, wrapper="col-md-6" %}
+                    {% form_view field=form.income, wrapper="col-md-6" %}
+                    {% form_view field=form.sex, wrapper="col-md-6" %}
+                    {% form_view field=form.selectedCourse, wrapper="col-md-6" %}
+                    {% form_view field=form.technology, wrapper="col-md-6" %}
+                    {% form_view field=form.hasLaptop, wrapper="col-md-6" %}
+                    {% form_view field=form.hasPenDrive, wrapper="col-md-6" %}
+                    {% form_view field=form.hasSmartPhone, wrapper="col-md-6" %}
+                    {% form_view field=form.hasPowerBank, wrapper="col-md-6" %}
+                    {% form_view field=form.bio, wrapper="col-md-6" %}
+                    {% form_view field=form.email, wrapper="col-md-6" %}
 
-
-                    <div class="col-12">
+                    <div class="col-12 mt-3">
                         <span class="float-end">
                             <a href="{{ url_for("form_controller.update", id=data.id) }}" type="submit" class="btn btn-primary">Edit</a>
                             <a href="{{ url_for("form_controller.list") }}" class="btn btn-danger ms-2">Cancel</a>
