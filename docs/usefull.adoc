@@ -1,0 +1,7 @@
+
+
+
+== Update All Packages
+```bash
+pip install -U ppy-common ppy-file-text ppy-jsonyml pweb pweb-auth pweb-cli pweb-form-rest pweb-orm pweb-ssr pweb-ui
+```
