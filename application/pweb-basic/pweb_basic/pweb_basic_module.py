@@ -20,7 +20,8 @@ class PWebBasicModule(PWebComponentRegister):
         pass
 
     def run_on_start(self, pweb_app, config):
-        pass
+        if pweb_app.is_app_loaded():
+            print("Call Once during app load")
 
     def register_model(self, pweb_db):
         pass
