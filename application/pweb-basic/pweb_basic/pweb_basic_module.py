@@ -8,6 +8,7 @@ from pweb_basic.controller.form_raw_controller import form_raw_controller
 from pweb_basic.controller.rest_api_controller import rest_api_controller
 from pweb_basic.controller.saas_controller import saas_controller
 from pweb_basic.controller.ssr_controller import ssr_controller
+from pweb_basic.controller.xyz_controller import xyz_controller
 
 
 class PWebBasicModule(PWebComponentRegister):
@@ -33,4 +34,5 @@ class PWebBasicModule(PWebComponentRegister):
         pweb_app.register_blueprint(form_controller)
         pweb_app.register_blueprint(ssr_controller)
         pweb_app.register_blueprint(form_raw_controller)
+        pweb_app.register_blueprint(xyz_controller)
         ExpController.init_controller(pweb_app)
