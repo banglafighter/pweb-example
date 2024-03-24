@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PWeb Socket Index</title>
+    <script src="{{ url_for('example.static', filename='js/lib/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for('example.static', filename='js/lib/socket.io.min.js') }}"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        jQuery(document).ready(function () {
+            var socket = io.connect('http://localhost:1212', {
+                'path': '/pweb-socket'
+            });
+
+            socket.on('connect', function () {
+                jQuery('#connection').text("Connected");
+                console.log("Connected.........")
+            });
+
+            window.setInterval(function () {
+                jQuery('#transport').text(socket.io.engine.transport.name);
+            }, 1000);
+
+            socket.on('eventName', function (message, callback) {
+                jQuery('#event-name').append('<br>' + jQuery('<div/>').text('Received : ' + message).html());
+                console.log(message)
+                if (callback) {
+                    callback();
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+
+    <h1>PWebSocket Test</h1>
+    <p>
+        Connection Status : <b><span id="connection"></span></b><br>
+        Current transport is: <b><span id="transport"></span></b><br>
+        eventName Event Message: <b><div id="event-name"></div></b>
+    </p>
+
+</body>
+</html>
