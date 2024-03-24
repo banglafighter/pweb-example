@@ -9,12 +9,16 @@
     <script type="text/javascript" charset="utf-8">
         jQuery(document).ready(function () {
             var socket = io.connect('http://localhost:1212', {
-                'path': '/pweb-socket'
+                'path': '/pweb-socket',
+                'query': "user=touhid"
             });
 
             socket.on('connect', function () {
                 jQuery('#connection').text("Connected");
-                console.log("Connected.........")
+            });
+
+            socket.on('disconnect', function () {
+                jQuery('#connection').text("Disconnected");
             });
 
             window.setInterval(function () {
@@ -22,13 +26,39 @@
             }, 1000);
 
             socket.on('eventName', function (message, callback) {
+                if (typeof message === "object") {
+                    message = "dict: " + message.dict
+                }
                 jQuery('#event-name').append('<br>' + jQuery('<div/>').text('Received : ' + message).html());
                 console.log(message)
                 if (callback) {
                     callback();
                 }
             });
+
+            socket.on('message', function (message, callback) {
+                if (typeof message === "object") {
+                    message = "dict: " + message.dict
+                }
+                jQuery('#massage-event').append('<br>' + jQuery('<div/>').text('Message : ' + message).html());
+                if (callback) {
+                    callback();
+                }
+            });
+
+            jQuery('#plain-text').submit(function (event) {
+                let text = jQuery('#pt-input').val()
+                console.log(text)
+                socket.emit('plainText', text);
+                return false;
+            });
+
+            jQuery('#json-data').click(function (event) {
+                socket.emit('jsonData', {data: "JSON Data"});
+                return false;
+            });
         })
+
     </script>
 </head>
 <body>
@@ -38,7 +68,15 @@
         Connection Status : <b><span id="connection"></span></b><br>
         Current transport is: <b><span id="transport"></span></b><br>
         eventName Event Message: <b><div id="event-name"></div></b>
+        Message Event: <b><div id="massage-event"></div></b>
     </p>
+
+    <form id="plain-text" method="POST" action='#'>
+        <input type="text" name="emit_data" id="pt-input" placeholder="Message">
+        <input type="submit" value="Plain Text">
+    </form>
+
+    <input type="button" value="JSON Data" id="json-data">
 
 </body>
 </html>
