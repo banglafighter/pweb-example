@@ -9,6 +9,7 @@ from pweb_basic.controller.rest_api_controller import rest_api_controller
 from pweb_basic.controller.saas_controller import saas_controller
 from pweb_basic.controller.ssr_controller import ssr_controller
 from pweb_basic.controller.xyz_controller import xyz_controller
+from pweb_extra.pws.pweb_socket import PWebSocket
 
 
 class PWebBasicModule(PWebComponentRegister):
@@ -22,6 +23,7 @@ class PWebBasicModule(PWebComponentRegister):
     def run_on_start(self, pweb_app, config):
         if pweb_app.is_app_loaded():
             print("Call Once during app load")
+            PWebSocket.register(pweb_app=pweb_app)
 
     def register_model(self, pweb_db):
         pass
