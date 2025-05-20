@@ -30,6 +30,8 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms='any',
+    py_modules=["pweb_app"],
+    entry_points={'console_scripts': ['pweb=pweb_app:cli']},
     install_requires=get_dependencies(),
     classifiers=[]
 )
